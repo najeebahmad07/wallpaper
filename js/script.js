@@ -55,7 +55,7 @@ const apiKey = 'YR3_bJ9inqhrXAurnX4tVCG5MFZmfdrrBFZ6RIb7G1w';
 
     const fetchWallpapers = async (query = '') => {
         try {
-            const response = await axios.get('https://source.unsplash.com/random/1920x1080/?wallpaper', {
+            const response = await axios.get('https://api.unsplash.com/photos/random', {
                 params: {
                     count: 12,
                     query,
