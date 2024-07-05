@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate API - NJB Wallpaper</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero-image {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            background: url('https://cdni.iconscout.com/illustration/premium/thumb/api-development-4439359-3726930.png') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-text {
+            position: absolute;
+            color: white;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .hero-text h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .generate-api {
+            padding: 60px 15px;
+        }
+        .generate-api h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .progress {
+            margin-top: 20px;
+            display: none;
+        }
+        .api-key {
+            display: none;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        .api-key .copy-btn {
+            margin-top: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .api-key .copy-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Image Section with Text Overlay -->
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1>Generate API</h1>
+        </div>
+    </div>
+
+    <!-- Generate API Section -->
+    <div class="container generate-api text-center">
+        <h2>Get Your API Key</h2>
+        <p>Click the button below to generate your unique API key.</p>
+        <button id="generate-api-btn" class="btn btn-primary">Generate API</button>
+
+        <!-- Progress Bar -->
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <!-- API Key Display -->
+        <div class="api-key">
+            <p>Your API Key is here:</p>
+            <input type="text" id="api-key-input" class="form-control" value="YR3_bJ9inqhrXAurnX4tVCG5MFZmfdrrBFZ6RIb7G1w" readonly>
+            <button class="copy-btn" onclick="copyApiKey()">Copy to Clipboard</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Custom JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('generate-api-btn').addEventListener('click', function() {
+            // Show progress bar
+            document.querySelector('.progress').style.display = 'block';
+            document.querySelector('.api-key').style.display = 'none';
+
+            // Simulate progress for 3 seconds
+            setTimeout(function() {
+                document.querySelector('.progress').style.display = 'none';
+                document.querySelector('.api-key').style.display = 'block';
+            }, 3000);
+        });
+
+        function copyApiKey() {
+            var apiKeyInput = document.getElementById('api-key-input');
+            apiKeyInput.select();
+            apiKeyInput.setSelectionRange(0, 99999); // For mobile devices
+
+            document.execCommand('copy');
+
+            alert("API Key copied to clipboard: " + apiKeyInput.value);
+        }
+    </script>
+</body>
+</html>

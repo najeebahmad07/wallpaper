@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 100px; /* Height of the footer */
+}
+
+.navbar {
+    margin-bottom: 50px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.search-bar {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search-bar input {
+    padding-right: 40px;
+}
+
+.search-bar .fa-search {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #aaa;
+}
+
+#wallpapers img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #f39c12;
+}
+
+.progress {
+    height: 20px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    width: 0;
+}
+
+.download-message {
+    display: none;
+    margin-top: 10px;
+    color: green;
+}
